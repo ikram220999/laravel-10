@@ -19,8 +19,8 @@ Route::get('/', function () {
 
 Route::get('/test', function() {
     return 0;
-}
+});
 
 Route::get('/pushfromlinux', function (){
 	return 1;
-}
+});
