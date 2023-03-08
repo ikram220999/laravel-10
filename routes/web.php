@@ -28,6 +28,8 @@ Route::get('/pushfromlinux', function (){
 
 Route::post('/addUser', [ItemController::class, 'store']);
 
-Route::get('/home', function() {
-    return view('adduser');
-});
+// Route::view('/home', function() {
+//     return view('adduser');
+// });
+
+Route::view('/add', 'adduser');
