@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +24,10 @@ Route::get('/test', function() {
 
 Route::get('/pushfromlinux', function (){
 	return 1;
+});
+
+Route::post('/addUser', [ItemController::class, 'store']);
+
+Route::get('/home', function() {
+    return view('adduser');
 });

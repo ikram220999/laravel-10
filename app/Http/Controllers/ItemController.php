@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 
 class ItemController extends Controller
 {
@@ -15,6 +17,7 @@ class ItemController extends Controller
     public function index(): Response
     {
         //
+
     }
 
     /**
@@ -23,6 +26,7 @@ class ItemController extends Controller
     public function create(): Response
     {
         //
+        
     }
 
     /**
@@ -31,6 +35,13 @@ class ItemController extends Controller
     public function store(Request $request): RedirectResponse
     {
         //
+        $user = User::create([
+            "name" => $request->name,
+            "email" => $request->email,
+            "password" => Hash::make($request->password),
+        ]);
+        
+        return response()->json($user, Response::HTTP_OK);
     }
 
     /**
