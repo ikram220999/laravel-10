@@ -23,29 +23,29 @@
     <body class="antialiased">
         <form method="post" action="/addUser" enctype="multipart/form-data">
             {{ csrf_field() }}
-            <div class="form-group row">
-                <label for="titleid" class="col-sm-3 col-form-label">Game Title</label>
+            <div class="form-group row m-auto w-50">
+                <label for="titleid" class="col-sm-3 col-form-label ">Game Title</label>
                 <div class="col-sm-9">
-                    <input name="name" type="text" class="form-control" id="titleid" placeholder="name">
+                    <input name="name" type="text" class="form-control p-3 w-100 border" id="titleid" placeholder="name">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="publisherid" class="col-sm-3 col-form-label">Game Publisher</label>
                 <div class="col-sm-9">
-                    <input name="email" type="text" class="form-control" id="publisherid"
+                    <input name="email" type="text" class="form-control p-3 w-100 border"  id="publisherid"
                            placeholder="email">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="releasedateid" class="col-sm-3 col-form-label">Release Date</label>
                 <div class="col-sm-9">
-                    <input name="password" type="text" class="form-control" id="releasedateid"
+                    <input name="password" type="text" class="form-control p-3 w-100 border" id="releasedateid"
                            placeholder="password">
                 </div>
             </div>
             <div class="form-group row">
-                <div class="offset-sm-3 col-sm-9">
-                    <button type="submit" class="btn btn-primary">Submit Game</button>
+                <div class="offset-sm-3 col-sm-9 ">
+                    <button type="submit" class="btn btn-primary p-3">Submit Game</button>
                 </div>
             </div>
         </form>
