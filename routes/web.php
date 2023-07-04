@@ -27,9 +27,12 @@ Route::get('/pushfromlinux', function (){
 });
 
 Route::post('/addUser', [ItemController::class, 'store']);
+Route::post('/addFile', [ItemController::class, 'addFile']);
+
 
 // Route::view('/home', function() {
 //     return view('adduser');
 // });
 
 Route::view('/add', 'adduser');
+Route::view('/tambahfile', 'addfile');

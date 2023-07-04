@@ -56,6 +56,20 @@ return [
             'throw' => false,
         ],
 
+        'cpanel' => [
+            'driver' => 'ftp',
+            'host' => env('CPANEL_HOST'),
+            'username' => env('CPANEL_USERNAME'),
+            'password' => env('CPANEL_PASSWORD'),
+            'port' => 31000,
+            'root' => env('CPANEL_ROOT'),
+            'passive' => true,
+            'ssl' => false,
+            'timeout' => 30,
+            'visibility' => 'public',
+            'adapter' => League\Flysystem\FTP\FtpAdapter::class,
+        ],
+
     ],
 
     /*
