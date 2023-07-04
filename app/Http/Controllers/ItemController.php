@@ -118,10 +118,12 @@ class ItemController extends Controller
         return response()->json($request, Response::HTTP_CREATED);
     }
 
-    public function streamPdf()
+    public function streamPdf(Request $request)
     {
+
+        // dd($request);
         $pdf = app('dompdf.wrapper');
-        $pdf->loadView('cert', []);
+        $pdf->loadView('cert', ["data" => $request->name]);
         return $pdf->stream('invoice.pdf');
     }
 }

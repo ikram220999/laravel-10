@@ -35,11 +35,21 @@
     </head>
     <body class="antialiased">
         
-        @for ($i = 0; $i< 5; $i++)
-             <div style="page-break-before: always">
-                kambing
-        </div>
-        @endfor
+        {{-- @for ($i = 0; $i< 5; $i++)
+             <div style="page-break-after: always">
+                <div style="margin-top: 100px">
+                    Kambing
+                </div>
+            </div>
+        @endfor --}}
+
+        @foreach ($data as $n)
+             <div style="page-break-after: always;">
+                <div style="margin-top: 500px; margin-left: 00px; text-align: center; border: 1px solid black">
+                    {{ $n }}
+                </div>
+            </div>
+        @endforeach
        
     </body>
 </html>

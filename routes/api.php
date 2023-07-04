@@ -26,4 +26,4 @@ Route::get('/heartrate', function () {
 });
 
 Route::post('/health', [ItemController::class, 'health']);
-Route::get('/stream', [ItemController::class, 'streamPdf']);
+Route::post('/stream', [ItemController::class, 'streamPdf']);
