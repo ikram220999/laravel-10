@@ -27,3 +27,4 @@ Route::get('/heartrate', function () {
 
 Route::post('/health', [ItemController::class, 'health']);
 Route::post('/stream', [ItemController::class, 'streamPdf']);
+Route::post('/upload', [ItemController::class, 'uploadImage']);
