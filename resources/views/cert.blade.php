@@ -33,7 +33,7 @@
 
         </style>
     </head>
-    <body class="antialiased">
+    <body class="antialiased" style="">
         
         {{-- @for ($i = 0; $i< 5; $i++)
              <div style="page-break-after: always">
@@ -44,11 +44,13 @@
         @endfor --}}
 
         @foreach ($data as $n)
-             <div style="page-break-after: always;">
-                <div style="margin-top: 500px; margin-left: 00px; text-align: center; border: 1px solid black">
-                    {{ $n }}
-                </div>
-            </div>
+        <div style="margin-top: {{ $x . 'px' }}; margin-left: {{ $y . 'px' }}; text-align: center; font-weight: 600; font-size: 25px; ">
+            {{ $n }}
+        </div>
+        @if ($n != end($data))
+             <div style="page-break-before: always; page-break-inside: avoid;"></div>
+        @endif
+       
         @endforeach
        
     </body>

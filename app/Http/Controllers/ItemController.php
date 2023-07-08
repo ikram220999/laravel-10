@@ -123,7 +123,13 @@ class ItemController extends Controller
 
         // dd($request);
         $pdf = app('dompdf.wrapper');
-        $pdf->loadView('cert', ["data" => $request->name]);
-        return $pdf->stream('invoice.pdf');
+
+        if ($request->orientation == 'V') {
+            $pdf->setPaper('a4', 'landscape');
+        } else {
+            $pdf->setPaper('a4', 'portrait');
+        }
+        $pdf->loadView('cert', ["data" => $request->name, 'x' => $request->x, 'y' => $request->y]);
+        return $pdf->stream('kk.pdf');
     }
 }
