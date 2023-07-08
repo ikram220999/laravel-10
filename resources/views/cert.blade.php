@@ -21,7 +21,7 @@
 
             body {
                 font-family: 'Nunito', sans-serif;
-                background: url("{{ public_path('storage/images/". $file ."') }}");
+                background: url("{{ public_path('storage/' . $file) }}");
                 background-repeat: no-repeat;
                 mix-blend-mode: overlay;
                 background-size: cover;
@@ -46,10 +46,6 @@
         @foreach ($data as $n)
         <div style="margin-top: {{ $x . 'px' }}; margin-left: {{ $y . 'px' }}; text-align: center; font-weight: 600; font-size: 25px; ">
             {{ $n }}
-            @php
-                
-                echo url("{{ public_path('storage/images/". $file ."') }}");
-            @endphp
         </div>
         @if ($n != end($data))
              <div style="page-break-before: always; page-break-inside: avoid;"></div>

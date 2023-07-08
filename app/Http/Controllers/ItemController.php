@@ -124,14 +124,14 @@ class ItemController extends Controller
         // dd($request);
         $pdf = app('dompdf.wrapper');
 
-        dd($request);
+        // dd($request);
 
         if ($request->orientation == 'V') {
             $pdf->setPaper('a4', 'landscape');
         } else {
             $pdf->setPaper('a4', 'portrait');
         }
-        $pdf->loadView('cert', ["data" => $request->name, 'x' => $request->x, 'y' => $request->y, "file" => $request->file]);
+        $pdf->loadView('cert', ["data" => $request->name, 'x' => $request->x, 'y' => $request->y, "file" => $request->fileName]);
         return $pdf->stream('kk.pdf');
     }
 
@@ -144,7 +144,7 @@ class ItemController extends Controller
         $filename = uniqid() . '.png';
 
         // Save the blob data in the storage
-        Storage::disk('local')->put('public/images/' . $filename, $blobData);        // Optionally, you can also store the file path in your database
+        Storage::disk('local')->put('public/' . $filename, $blobData);        // Optionally, you can also store the file path in your database
         // $filePath = 'path/to/storage/' . $filename;
         // YourModel::create(['file_path' => $filePath]);
 
