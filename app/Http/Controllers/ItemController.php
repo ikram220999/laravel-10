@@ -126,7 +126,7 @@ class ItemController extends Controller
 
         // dd($request);
 
-        if ($request->orientation == 'V') {
+        if ($request->orientation == 'L') {
             $pdf->setPaper('a4', 'landscape');
         } else {
             $pdf->setPaper('a4', 'portrait');
