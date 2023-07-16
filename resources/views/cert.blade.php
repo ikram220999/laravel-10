@@ -7,7 +7,6 @@
         <title>Laravel</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <!-- Styles -->
         <style>
@@ -17,10 +16,11 @@
         <style>
              @page {
                 margin: 0px;
+
             }
 
             body {
-                font-family: 'Nunito', sans-serif;
+                font-family: 'Courier New', Courier, monospace;
                 background: url("{{ public_path('storage/' . $file) }}");
                 background-repeat: no-repeat;
                 mix-blend-mode: overlay;
@@ -30,6 +30,7 @@
                 /* position: absolute; */
                 /* background-color: black; */
             }
+
 
         </style>
     </head>
@@ -44,8 +45,8 @@
         @endfor --}}
 
         @foreach ($data as $n)
-        <div style="margin-top: {{ $x . 'px' }}; margin-left: {{ $y . 'px' }}; text-align: center; font-weight: 600; font-size: 25px; ">
-            {{ $n }}
+        <div class="text" style="margin-top: {{ $x . 'px' }}; margin-left: {{ $y . 'px' }}; text-align: center; font-size: 25px; font-family: sans-serif; font-weight:bold">
+            {{ strtoupper($n) }}
         </div>
         @if ($n != end($data))
              <div style="page-break-before: always; page-break-inside: avoid;"></div>
